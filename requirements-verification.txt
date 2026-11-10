@@ -1,0 +1,6 @@
+# Sirf verification (Siamese model) ke liye — detection/auth is ke baghair
+# bhi chalte hain. TensorFlow bari download hai (one-time).
+# NOTE: agar pip install fail ho (masalan Python ke naye version par wheel
+# na mile) to verification band rahegi lekin baqi API bilkul theek chalegi;
+# us surat me ONNX wala rasta agla step hoga.
+tensorflow

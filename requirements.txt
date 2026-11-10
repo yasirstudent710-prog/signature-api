@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-multipart
+ultralytics
+pillow
+numpy
+requests
+PyMuPDF
+# PostgreSQL ke liye — sirf jab DATABASE_URL set ho tab istemal hota hai;
+# warna purana SQLite hi chalta hai (app.db)
+psycopg[binary]>=3.1

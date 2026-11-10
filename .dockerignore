@@ -1,0 +1,8 @@
+# Ye cheezein Docker image / live server par KABHI nahi jani chahiye
+.env
+app.db
+uploads/
+annotated/
+__pycache__/
+*.pyc
+.git/

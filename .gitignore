@@ -1,0 +1,8 @@
+# Secrets aur local data — GitHub / Space repo me kabhi nahi
+.env
+app.db
+uploads/
+annotated/
+__pycache__/
+*.pyc
+*.log
