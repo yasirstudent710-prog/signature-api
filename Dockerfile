@@ -16,7 +16,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 COPY requirements.txt requirements-verification.txt ./
-# pehle requirements, phir verification (TensorFlow) — dono ek dafa install
+# PEHLE CPU-wala torch (halki build): Railway server par GPU hota hi nahi,
+# model wahan CPU par hi chalta hai. Pehle default torch apne saath kai GB
+# ka CUDA bundle kheench lata tha, jis se build bar bar darmiyan me fail
+# ho rahi thi (2026-11-11 ko do dafa). CPU torch sirf ~200 MB ka hai.
+RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# phir requirements, phir verification (TensorFlow) — CPU torch pehle se
+# mojood hoga to ultralytics use dobara download NAHI karega
 RUN pip install --no-cache-dir -r requirements.txt \
     && pip install --no-cache-dir -r requirements-verification.txt
 
